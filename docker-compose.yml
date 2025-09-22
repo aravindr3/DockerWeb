@@ -20,7 +20,7 @@ services:
         hard: 65535
     labels:
       - "traefik.enable=true"
-      - "traefik.http.routers.hybrcrm.rule=Host(`uatcrm-uatcrmapi-wztgac-7a18bc-31-97-202-93.traefik.me`)"
+      - "traefik.http.routers.hybrcrm.rule=Host(`uatcrm-uatcrmapi-5jutlg-28cd90-31-97-202-93.traefik.me`)"
       - "traefik.http.routers.hybrcrm.entrypoints=web"
       - "traefik.http.routers.hybrcrm.middlewares=strip-hybrcrmwebapi"
       - "traefik.http.middlewares.strip-hybrcrmwebapi.stripprefix.prefixes=/hybrcrmwebapi"
