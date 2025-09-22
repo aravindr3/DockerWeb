@@ -8,7 +8,7 @@ services:
       DOTNET_ENVIRONMENT: Production
     labels:
       - "traefik.enable=true"
-      - "traefik.http.routers.dockerweb.rule=Host(`uatcrm-docker-xc9icu-ef30cd-31-97-202-93.traefik.me`) && PathPrefix(`/dockerweb`)"
+      - "traefik.http.routers.dockerweb.rule=Host(`uatcrm-docker-mj5i8v-60cfe5-31-97-202-93.traefik.me`) && PathPrefix(`/dockerweb`)"
       - "traefik.http.routers.dockerweb.entrypoints=web"
       - "traefik.http.routers.dockerweb.middlewares=strip-dockerweb"
       - "traefik.http.middlewares.strip-dockerweb.stripprefix.prefixes=/dockerweb"
