@@ -1,0 +1,6 @@
+services:
+  dockerweb:
+    image: ${DOCKER_REGISTRY-}dockerweb
+    build:
+      context: .
+      dockerfile: DockerWeb/Dockerfile

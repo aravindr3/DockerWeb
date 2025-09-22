@@ -1,0 +1,13 @@
+D:\Myprojects\DockerSolution\DockerSolution\bin\Debug\DockerWeb.deps.json
+D:\Myprojects\DockerSolution\DockerSolution\bin\Debug\DockerWeb.runtimeconfig.json
+D:\Myprojects\DockerSolution\DockerSolution\bin\Debug\appsettings.Development.json
+D:\Myprojects\DockerSolution\DockerSolution\bin\Debug\appsettings.json
+D:\Myprojects\DockerSolution\DockerSolution\bin\Debug\DockerWeb.staticwebassets.endpoints.json
+D:\Myprojects\DockerSolution\DockerSolution\bin\Debug\DockerWeb.exe
+D:\Myprojects\DockerSolution\DockerSolution\bin\Debug\DockerWeb.dll
+D:\Myprojects\DockerSolution\DockerSolution\bin\Debug\Microsoft.AspNetCore.OpenApi.dll
+D:\Myprojects\DockerSolution\DockerSolution\bin\Debug\Microsoft.OpenApi.dll
+D:\Myprojects\DockerSolution\DockerSolution\bin\Debug\DockerWeb.pdb
+D:\Myprojects\DockerSolution\DockerSolution\obj\Debug\docker-compose.dcproj.AssemblyReference.cache
+D:\Myprojects\DockerSolution\DockerSolution\obj\Debug\docker-compose.dcproj.CoreCompileInputs.cache
+D:\Myprojects\DockerSolution\DockerSolution\obj\Debug\docker-c.35A3FFBA.Up2Date
