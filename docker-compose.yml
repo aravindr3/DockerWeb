@@ -1,6 +1,12 @@
+version: '3.8'
+
 services:
   dockerweb:
     image: ${DOCKER_REGISTRY-}dockerweb
     build:
       context: .
       dockerfile: DockerWeb/Dockerfile
+    environment:
+      - DOTNET_ENVIRONMENT=Production
+    ports:
+      - "8080:8080"
