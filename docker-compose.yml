@@ -7,12 +7,11 @@ services:
     environment:
       DOTNET_ENVIRONMENT: Production
     labels:
-      # Traefik routing
       - "traefik.enable=true"
-      - "traefik.http.routers.dockerweb.rule=Host(`uatcrm-docker-xc9icu-ef30cd-31-97-202-93.traefik.me`)"
+      - "traefik.http.routers.dockerweb.rule=Host(`uatcrm-docker-xc9icu-ef30cd-31-97-202-93.traefik.me`) && PathPrefix(`/dockerweb`)"
       - "traefik.http.routers.dockerweb.entrypoints=web"
-      # Optional: strip prefix if you want /dockerweb/* routed to / in the container
-      #- "traefik.http.middlewares.dockerweb-strip.stripprefix.prefixes=/dockerweb"
-      #- "traefik.http.routers.dockerweb.middlewares=dockerweb-strip"
+      - "traefik.http.routers.dockerweb.middlewares=strip-dockerweb"
+      - "traefik.http.middlewares.strip-dockerweb.stripprefix.prefixes=/dockerweb"
+      - "traefik.http.services.dockerweb.loadbalancer.server.port=8080"
     ports:
-      - "8081:8080"  # Host port mapping (avoids conflicts)
+      - "8081:8080"
