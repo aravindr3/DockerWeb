@@ -6,6 +6,7 @@ services:
       dockerfile: DockerWeb/Dockerfile
     environment:
       DOTNET_ENVIRONMENT: Production
+      DOTNET_USE_POLLING_FILE_WATCHER: "1" 
     labels:
       - "traefik.enable=true"
       - "traefik.http.routers.dockerweb.rule=Host(`uatcrm-docker-mj5i8v-60cfe5-31-97-202-93.traefik.me`) && PathPrefix(`/dockerweb`)"
