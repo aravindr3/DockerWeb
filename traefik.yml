@@ -1,0 +1,15 @@
+http:
+  routers:
+    dockerweb:
+      rule: Host(`uatcrm-docker-xc9icu-ef30cd-31-97-202-93.traefik.me`) && PathPrefix(`/dockerweb`)
+      service: dockerweb
+      entryPoints:
+        - web
+      middlewares:
+        - strip-dockerweb
+
+  middlewares:
+    strip-dockerweb:
+      stripPrefix:
+        prefixes:
+          - "/dockerweb"
