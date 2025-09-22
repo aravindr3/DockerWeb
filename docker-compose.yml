@@ -1,22 +1,27 @@
+version: '3.9'
+
 services:
-  dockerweb:
-    image: ${DOCKER_REGISTRY-}dockerweb
+  api:
+    container_name: hybrcrmwebapi
     build:
       context: .
-      dockerfile: DockerWeb/Dockerfile
+      dockerfile: LoginApi/Src/Presentation/LoginApi.WebApi/Dockerfile
+    image: hybrcrmwebapi
+    ports:
+      - "8082:8080"  # Host:Container (optional, mainly for debugging)
+    volumes:
+      - ./keys:/keys
     environment:
       DOTNET_ENVIRONMENT: Production
-      DOTNET_USE_POLLING_FILE_WATCHER: "1" 
-    labels:
-      - "traefik.enable=true"
-      - "traefik.http.routers.dockerweb.rule=Host(`uatcrm-docker-mj5i8v-b8a6cb-31-97-202-93.traefik.me`)"
-      - "traefik.http.routers.dockerweb.entrypoints=web"
-      - "traefik.http.routers.dockerweb.middlewares=strip-dockerweb"
-      - "traefik.http.middlewares.strip-dockerweb.stripprefix.prefixes=/dockerweb"
-      - "traefik.http.services.dockerweb.loadbalancer.server.port=8080"
-    ports:
-      - "8081:8080"
+      DOTNET_USE_POLLING_FILE_WATCHER: "1"
     ulimits:
       nofile:
         soft: 65535
         hard: 65535
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.hybrcrm.rule=Host(`uatcrm-uatcrmapi-wztgac-7a18bc-31-97-202-93.traefik.me`)"
+      - "traefik.http.routers.hybrcrm.entrypoints=web"
+      - "traefik.http.routers.hybrcrm.middlewares=strip-hybrcrmwebapi"
+      - "traefik.http.middlewares.strip-hybrcrmwebapi.stripprefix.prefixes=/hybrcrmwebapi"
+      - "traefik.http.services.hybrcrm.loadbalancer.server.port=8082"
